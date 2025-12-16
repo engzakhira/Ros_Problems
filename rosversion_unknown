@@ -6,13 +6,14 @@ Try
 $ rosversion -d
 <unknown>
 remove the correct ROS-specific catkin package
-$ sudo apt remove ros-noetic-catkin full
+$ sudo apt remove ros-noetic-desktop-full
 $ sudo apt remove catkin python3-catkin-pkg python-catkin-pkg
 $ sudo apt autoremove
 $ sudo apt update  
 $ sudo apt upgrade
 
 install the correct ROS-specific catkin package
+sudo apt install ros-noetic-desktop-full
 $ sudo apt install ros-noetic-catkin
 $ sudo apt install catkin python3-catkin-pkg python-catkin-pkg
 
