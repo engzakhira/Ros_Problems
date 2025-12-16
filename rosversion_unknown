@@ -1,0 +1,33 @@
+
+
+Fix Broken Packages (Initial Attempt)
+$ sudo apt --fix-broken install
+Try 
+$ rosversion -d
+<unknown>
+remove the correct ROS-specific catkin package
+$ sudo apt remove ros-noetic-catkin full
+$ sudo apt remove catkin python3-catkin-pkg python-catkin-pkg
+$ sudo apt autoremove
+$ sudo apt update  
+$ sudo apt upgrade
+
+install the correct ROS-specific catkin package
+$ sudo apt install ros-noetic-catkin
+$ sudo apt install catkin python3-catkin-pkg python-catkin-pkg
+
+ROS Environment Not Sourced
+For your shell to recognize which ROS distribution (like Noetic, Melodic, Humble, etc.) 
+you are using, you must execute a setup file provided by the ROS installation.
+$ source /opt/ros/noeticsetup.bash
+
+Sourcing is Not Permanent
+The source command only applies the environment variables to the current terminal session.
+When you open a new terminal, you lose the ROS environment and need to source the setup file again.
+Permanent Solution: To make this setting permanent for all new terminal sessions, 
+you should add the source command to your shell's startup file (usually ~/.bashrc):
+$ echo "source /opt/ros/<your_distro>/setup.bash" >> ~/.bashrc
+$ source ~/.bashrc
+
+$ rosversion -d
+noetic
